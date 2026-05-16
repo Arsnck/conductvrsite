@@ -1,11 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Showcase page for a Unity VR project — overview, results, team, and future work.">
+  <title>Unity VR Project — Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>hello world</h1>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <span class="hero-badge">Unity · VR</span>
+      <h1 class="hero-title">ConductVR</h1>
+      <p class="hero-lead">
+        Experience conduting in VR!
+      </p>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Page sections">
+    <div class="wrap site-nav-inner">
+      <details class="nav-dropdown">
+        <summary class="nav-dropdown-summary">
+          Jump to section
+        </summary>
+        <div class="nav-dropdown-panel">
+          <ul class="nav-dropdown-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#challenges">Challenges &amp; proposed techniques</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#accomplishments">Accomplishments</a></li>
+            <li><a href="#contributions">Contributions</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#future">Future work</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Project story -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="about-title" class="section-title">About</h2>
+          <p class="section-intro">High-level overview of the Unity VR experience and what this report documents.</p>
+        </header>
+        <div class="prose">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="subsection">
+          <h3 class="subtitle">Motivation</h3>
+          <div class="prose">
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus.
+            </p>
+            <p>
+              Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="background" class="section" aria-labelledby="background-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="background-title" class="section-title">Background</h2>
+          <p class="section-intro">Context, prior work, and why VR was a good fit for the problem space.</p>
+        </header>
+        <div class="prose">
+          <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.
+          </p>
+          <p>
+            Nulla quam. Aenean laoreet. Vestibulum nisi lectus, blandit eu, molestie nec, feugiat non, mi.Fusce convallis metus id felis luctus adipiscing. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications" class="section" aria-labelledby="applications-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="applications-title" class="section-title">Current applications</h2>
+          <p class="section-intro">Where this kind of VR system is used today and how your prototype connects.</p>
+        </header>
+        <div class="prose">
+          <p>
+            Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Nam adipiscing. Etiam iaculis nunc ac metus. Ut id nisl quis enim dignissim sagittis.
+          </p>
+          <ul>
+            <li>Lorem ipsum — training and simulation use cases.</li>
+            <li>Dolor sit amet — accessibility and ergonomics in VR.</li>
+            <li>Consectetur — real-time interaction and feedback loops.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach: challenges + techniques -->
+    <section id="challenges" class="section" aria-labelledby="challenges-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="challenges-title" class="section-title">Challenges &amp; proposed techniques</h2>
+          <p class="section-intro">Problems you hit in Unity / VR and the methods you chose to address them.</p>
+        </header>
+        <div class="subsection">
+          <h3 class="subtitle">Challenges</h3>
+          <div class="prose">
+            <p>
+              Proin magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Performance, comfort, input mapping, and scene scale are common pain points in room-scale VR.
+            </p>
+          </div>
+        </div>
+        <div class="subsection">
+          <h3 class="subtitle">Proposed techniques</h3>
+          <div class="prose">
+            <p>
+              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Listing your approaches here — e.g. locomotion scheme, UI diegesis, optimization passes, shader choices, XR Interaction Toolkit usage — makes the report easy to scan.
+            </p>
+            <ul>
+              <li>Technique one — short explanation.</li>
+              <li>Technique two — short explanation.</li>
+              <li>Technique three — short explanation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Largest section: demos -->
+    <section id="results" class="section" aria-labelledby="results-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="results-title" class="section-title">Results</h2>
+          <p class="section-intro">Videos, captures, and anything that shows the experience in action. Swap placeholders for real embeds and image files.</p>
+        </header>
+
+        <div class="results-block">
+          <p id="videos-label" class="results-label">Videos</p>
+          <div class="video-grid" role="region" aria-labelledby="videos-label">
+            <!--
+              Example embed (YouTube → Share → Embed). Paste between <figure class="video-frame">…</figure>:
+              <iframe title="Demo walkthrough" src="https://www.youtube.com/embed/VIDEO_ID"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+            -->
+            <figure class="video-frame">
+              <div class="media-placeholder">Primary demo — replace this block with a 16:9 <code style="color:var(--text)">&lt;iframe&gt;</code> embed.</div>
+              <figcaption class="figcap">Caption for demo clip one.</figcaption>
+            </figure>
+            <figure class="video-frame">
+              <div class="media-placeholder">Secondary clip — optional second embed.</div>
+              <figcaption class="figcap">Optional second clip caption.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="results-block">
+          <p id="screenshots-label" class="results-label">Screenshots</p>
+          <div class="screenshot-grid" role="region" aria-labelledby="screenshots-label">
+            <figure>
+              <!-- Replace src with ./images/your-shot.png etc. -->
+              <div class="screenshot-placeholder" role="img" aria-label="Screenshot placeholder one">Screenshot — add img tag</div>
+              <figcaption class="figcap">Lorem ipsum — describe what the viewer is seeing in-editor or in-headset.</figcaption>
+            </figure>
+            <figure>
+              <div class="screenshot-placeholder" role="img" aria-label="Screenshot placeholder two">Screenshot — add img tag</div>
+              <figcaption class="figcap">Another angle or UI state worth highlighting.</figcaption>
+            </figure>
+            <figure>
+              <div class="screenshot-placeholder" role="img" aria-label="Screenshot placeholder three">Screenshot — add img tag</div>
+              <figcaption class="figcap">Performance overlay, interaction highlight, etc.</figcaption>
+            </figure>
+          </div>
+          <p class="hint">
+            Tip: put images in an <code style="color:var(--text)">/images</code> folder in the repo and use <code style="color:var(--text)">&lt;img src="images/file.png" alt="…"&gt;</code> inside each <code style="color:var(--text)">figure</code> instead of the gray placeholder <code style="color:var(--text)">div</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="accomplishments" class="section" aria-labelledby="accomplishments-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="accomplishments-title" class="section-title">Accomplishments</h2>
+          <p class="section-intro">Concrete outcomes: what shipped, what worked, and what you proved in VR.</p>
+        </header>
+        <div class="prose">
+          <ul>
+            <li>Lorem ipsum — milestone or deliverable one.</li>
+            <li>Dolor sit amet — milestone or deliverable two.</li>
+            <li>Consectetur adipiscing — milestone or deliverable three.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contributions" class="section" aria-labelledby="contributions-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="contributions-title" class="section-title">Contributions</h2>
+          <p class="section-intro">Who did what — edit names, roles, and bullets for each teammate.</p>
+        </header>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Teammate One</h3>
+            <p class="card-role">Role</p>
+            <p>Lorem ipsum dolor sit amet — scene setup, XR rig, interactions, documentation slice, etc.</p>
+          </article>
+          <article class="card">
+            <h3>Teammate Two</h3>
+            <p class="card-role">Role</p>
+            <p>Consectetur adipiscing elit — shaders, UI, user testing, build pipeline, etc.</p>
+          </article>
+          <article class="card">
+            <h3>Teammate Three</h3>
+            <p class="card-role">Role</p>
+            <p>Sed do eiusmod tempor — research, report writing, evaluation metrics, demo recording, etc.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="limitations" class="section" aria-labelledby="limitations-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="limitations-title" class="section-title">Limitations</h2>
+          <p class="section-intro">Honest constraints: hardware scope, sample size, engine limits, time box.</p>
+        </header>
+        <div class="prose">
+          <p>
+            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          </p>
+          <p>
+            Replace this paragraph with specifics — e.g. single-headset testing, simplified physics, unresolved motion sickness edge cases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="section" aria-labelledby="summary-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="summary-title" class="section-title">Summary</h2>
+          <p class="section-intro">Short recap tying motivation → approach → results.</p>
+        </header>
+        <div class="prose">
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. This section should read like an abstract: what you built, why it matters, and the main takeaway.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="future" class="section" aria-labelledby="future-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="future-title" class="section-title">Future work</h2>
+          <p class="section-intro">Roadmap ideas — what you would tackle next with more time or hardware.</p>
+        </header>
+        <div class="prose">
+          <p>
+            Next steps — multiplayer, eye tracking, formal user study, polish pass on locomotion, port to another headset, etc. One paragraph is enough to start; expand into sub-bullets if your roadmap grows.
+          </p>
+          <ul>
+            <li>Future item one.</li>
+            <li>Future item two.</li>
+            <li>Future item three.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Unity VR project showcase · Hosted on GitHub Pages · Replace lorem ipsum with your copy.</p>
+    </div>
+  </footer>
 </body>
 </html>
