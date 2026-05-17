@@ -158,12 +158,16 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
                 allowfullscreen loading="lazy"></iframe>
             -->
             <figure class="video-frame">
-              <div class="media-placeholder">Primary demo — replace this block with a 16:9 <code style="color:var(--text)">&lt;iframe&gt;</code> embed.</div>
-              <figcaption class="figcap">Caption for demo clip one.</figcaption>
+              <iframe title="demo" src="https://www.youtube.com/embed/t9TpUqbjakA"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+              <figcaption class="figcap">Demo of full system.</figcaption>
             </figure>
             <figure class="video-frame">
-              <div class="media-placeholder">Secondary clip — optional second embed.</div>
-              <figcaption class="figcap">Optional second clip caption.</figcaption>
+              <iframe title="demo" src="https://www.youtube.com/embed/ETEcFTdnXfo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+              <figcaption class="figcap">Testing the audio system with mouse clicks.</figcaption>
             </figure>
           </div>
         </div>
@@ -172,22 +176,18 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
           <p id="screenshots-label" class="results-label">Screenshots</p>
           <div class="screenshot-grid" role="region" aria-labelledby="screenshots-label">
             <figure>
-              <!-- Replace src with ./images/your-shot.png etc. -->
-              <div class="screenshot-placeholder" role="img" aria-label="Screenshot placeholder one">Screenshot — add img tag</div>
-              <figcaption class="figcap">Lorem ipsum — describe what the viewer is seeing in-editor or in-headset.</figcaption>
+              <img src="images/sheetmusic.png" alt="Sheet music display used in the conductor VR prototype" loading="lazy">
+              <figcaption class="figcap">Sheet music used for stemming — arranged by Quinlan Ngo (Noctilous).</figcaption>
             </figure>
             <figure>
-              <div class="screenshot-placeholder" role="img" aria-label="Screenshot placeholder two">Screenshot — add img tag</div>
-              <figcaption class="figcap">Another angle or UI state worth highlighting.</figcaption>
+              <img src="images/stage.png" alt="Constructed concert hall in the VR scene" loading="lazy">
+              <figcaption class="figcap">Image of the constructed concert hall by Nick Egorov.</figcaption>
             </figure>
             <figure>
-              <div class="screenshot-placeholder" role="img" aria-label="Screenshot placeholder three">Screenshot — add img tag</div>
+              <img src="images/baton.png" alt="Interactive baton overlay showing feedback and controls" loading="lazy">
               <figcaption class="figcap">Performance overlay, interaction highlight, etc.</figcaption>
             </figure>
           </div>
-          <p class="hint">
-            Tip: put images in an <code style="color:var(--text)">/images</code> folder in the repo and use <code style="color:var(--text)">&lt;img src="images/file.png" alt="…"&gt;</code> inside each <code style="color:var(--text)">figure</code> instead of the gray placeholder <code style="color:var(--text)">div</code>.
-          </p>
         </div>
       </div>
     </section>
@@ -200,9 +200,9 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
         </header>
         <div class="prose">
           <ul>
-            <li>Lorem ipsum — milestone or deliverable one.</li>
-            <li>Dolor sit amet — milestone or deliverable two.</li>
-            <li>Consectetur adipiscing — milestone or deliverable three.</li>
+            <li>Created the three systems-> Scene, conductor, and audio and fulfilled our first milestone.</li>
+            <li>Hit our goal: one full song with eye tracking, facial gestures, 3d audio, and cues/dynamic audio. When trying and controlling the music, it felt very immersive having it follow my gestures.</li>
+            <li>New gesture detection supports all time signatures, fulfilling one of our reach goals.</li>
           </ul>
         </div>
       </div>
@@ -212,23 +212,22 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
       <div class="wrap">
         <header class="section-head">
           <h2 id="contributions-title" class="section-title">Contributions</h2>
-          <p class="section-intro">Who did what — edit names, roles, and bullets for each teammate.</p>
         </header>
         <div class="card-grid">
           <article class="card">
-            <h3>Teammate One</h3>
-            <p class="card-role">Role</p>
-            <p>Lorem ipsum dolor sit amet — scene setup, XR rig, interactions, documentation slice, etc.</p>
+            <h3>Nick Egorov</h3>
+            <p class="card-role">Scene Modeler</p>
+            <p>Scene modeling, including recreating the concert hall environment. Added textures, lighting, and 3D audio.</p>
           </article>
           <article class="card">
-            <h3>Teammate Two</h3>
-            <p class="card-role">Role</p>
-            <p>Consectetur adipiscing elit — shaders, UI, user testing, build pipeline, etc.</p>
+            <h3>Quinlan Ngo</h3>
+            <p class="card-role">Audio System</p>
+            <p>Music Arrangement, music stemming and slicing system. Cues for instruments and volume adjustment based on facial gestures.</p>
           </article>
           <article class="card">
-            <h3>Teammate Three</h3>
-            <p class="card-role">Role</p>
-            <p>Sed do eiusmod tempor — research, report writing, evaluation metrics, demo recording, etc.</p>
+            <h3>Silas Rager</h3>
+            <p class="card-role">Conducting</p>
+            <p>Baton model creation, VR Controller and conducting system. Eye-tracking and facial gesture detection.</p>
           </article>
         </div>
       </div>
@@ -242,10 +241,12 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
         </header>
         <div class="prose">
           <p>
-            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+            Of course, with the scope of a semester-long project and a small team, there are limitations to what we could accomplish. These include technical constraints of the Meta Quest Pro hardware, the complexity of accurately simulating orchestral acoustics, and the challenge of designing an intuitive conducting interface that captures the nuance of real-world technique.
           </p>
           <p>
-            Replace this paragraph with specifics — e.g. single-headset testing, simplified physics, unresolved motion sickness edge cases.
+            For conducting, the music system currently supports a single orchestral piece with a fixed arrangement. Expanding to a library of music and enabling user-imported tracks would require significant development on the audio engine and gesture mapping. Additionally, while the system captures basic conducting gestures and facial expressions, it does not yet account for more subtle cues like baton angle, hand shape, or nuanced eye movements that professional conductors use to communicate with their musicians.
+            For the gestures, the tempo doesn't actually line up exactly with the ictus of the beat, which can create a slight disconnect between the conductor's physical motion and the audio response. Future iterations could explore predictive algorithms to better align audio playback with the expected timing of conducting gestures.
+            Audio sources are not directional, which may not fully capture accurate acoustics.
           </p>
         </div>
       </div>
@@ -259,7 +260,7 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
         </header>
         <div class="prose">
           <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. This section should read like an abstract: what you built, why it matters, and the main takeaway.
+            ConductVR is a Unity-based VR experience that simulates orchestral conducting on the Meta Quest Pro. By leveraging six-degrees-of-freedom tracking, eye and facial gesture recognition, and spatial audio, the system provides an immersive platform for conductors to practice and experiment with tempo control, dynamic balance, and section coordination. The project demonstrates the potential of VR to create novel training tools that capture the physicality and communicative nuance of real-world skills. While there are limitations to address in future iterations, the current prototype successfully integrates multiple subsystems into a cohesive conducting simulator that offers a unique blend of artistic expression and technical innovation.
           </p>
         </div>
       </div>
@@ -272,13 +273,10 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
           <p class="section-intro">Roadmap ideas — what you would tackle next with more time or hardware.</p>
         </header>
         <div class="prose">
-          <p>
-            Next steps — multiplayer, eye tracking, formal user study, polish pass on locomotion, port to another headset, etc. One paragraph is enough to start; expand into sub-bullets if your roadmap grows.
-          </p>
           <ul>
-            <li>Future item one.</li>
-            <li>Future item two.</li>
-            <li>Future item three.</li>
+            <li>Simulated musicians: instead of boxes, have AI agents playing.</li>
+            <li>Tutorial: The system is a bit convoluted, but a comprehensive tutorial could help users navigate its features.</li>
+            <li>Song library: Expand the system to support a wider variety of musical pieces.</li>
           </ul>
         </div>
       </div>
@@ -287,7 +285,7 @@ Prior work in music VR has largely focused on instrument simulation (virtual pia
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>Unity VR project showcase · Hosted on GitHub Pages · Replace lorem ipsum with your copy.</p>
+      <p>ConductVr project showcase · Hosted on GitHub Pages</p>
     </div>
   </footer>
 </body>
