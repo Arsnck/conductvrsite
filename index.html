@@ -32,6 +32,9 @@
         <div class="nav-dropdown-panel">
           <ul class="nav-dropdown-list">
             <li><a href="#about">About</a></li>
+              <p> 
+
+            </p>
             <li><a href="#background">Background</a></li>
             <li><a href="#applications">Applications</a></li>
             <li><a href="#challenges">Challenges &amp; proposed techniques</a></li>
@@ -57,17 +60,15 @@
         </header>
         <div class="prose">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+             ConductVR is a Meta Quest Pro virtual reality experience built in Unity that lets users step onto the podium of a fully rendered concert hall and conduct a virtual orchestra. Unlike traditional music games or rhythm applications, ConductVR is not score-driven-  here is no right or wrong path. Instead, the user has genuine artistic control: baton gestures set the tempo in real time, jaw movement modulates overall volume (enabling crescendos and diminuendos), and eye gaze cues individual sections.
+
+This report documents the system architecture, technical challenges, and design decisions behind the project. It covers gesture detection and BPM calculation, the two-iteration audio engine, eye and facial tracking, spatial acoustics, scene construction, and plans for future development. The goal is to provide a clear picture of how each subsystem was built and how they integrate into a cohesive conducting simulator. </p>
         </div>
         <div class="subsection">
           <h3 class="subtitle">Motivation</h3>
           <div class="prose">
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus.
-            </p>
-            <p>
-              Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.
+             Conducting an orchestra normally requires dozens of trained musicians, a rehearsal space, and significant scheduling overhead before a prospective conductor can log even a single hour of purposeful practice. With ConductVr, conductors can practice with greater immersion and presence than if they were practicing conducting alone.
             </p>
           </div>
         </div>
@@ -82,10 +83,12 @@
         </header>
         <div class="prose">
           <p>
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.
+            Orchestral conducting relies on physical feedback- the resistance of a real baton, the eye contact of live musicians, the acoustic response of a hall- as the primary medium for learning. Simulation of these conditions has historically been impractical, but recent advances in consumer VR hardware have made high-fidelity motion capture, eye tracking, and spatial audio accessible outside research laboratories.
+Prior work in music VR has largely focused on instrument simulation (virtual piano, guitar, and drum applications are well established) or passive concert experiences. Conducting-specific applications exist but are sparse and typically reduce the interaction model to tempo tapping or simple gesture recognition in 2/4 or 4/4 time. None, to our knowledge, incorporate the communicative layer of facial expression or the directional intentionality of eye gaze.
+
           </p>
           <p>
-            Nulla quam. Aenean laoreet. Vestibulum nisi lectus, blandit eu, molestie nec, feugiat non, mi.Fusce convallis metus id felis luctus adipiscing. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            VR is an especially good fit for this problem for several reasons. Presence and scale matter: standing at the center of a virtual Dekelboum Concert Hall, surrounded by orchestra sections, creates a sense of responsibility and spatial awareness that a desktop screen cannot replicate. Six-degrees-of-freedom tracking captures the full arc of conducting gestures. And the Meta Quest Pro's eye and face tracking add more layers-  gaze direction, jaw aperture, smile/frown- that defines professional conducting beyond mere baton work. It’s about communicating with the orchestra. 
           </p>
         </div>
       </div>
@@ -98,13 +101,10 @@
           <p class="section-intro">Where this kind of VR system is used today and how your prototype connects.</p>
         </header>
         <div class="prose">
-          <p>
-            Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Nam adipiscing. Etiam iaculis nunc ac metus. Ut id nisl quis enim dignissim sagittis.
-          </p>
           <ul>
-            <li>Lorem ipsum — training and simulation use cases.</li>
-            <li>Dolor sit amet — accessibility and ergonomics in VR.</li>
-            <li>Consectetur — real-time interaction and feedback loops.</li>
+            <li>Training and simulation Military, surgical, and sports training have adopted VR simulators to reduce cost and increase practice volume without physical risk. ConductVR applies the same logic to musical performance training, where repetition and low-stakes experimentation are essential to developing intuition for tempo control, dynamic balance, and section coordination.</li>
+            <li>Accessibility and ergonomics — For conductors with mobility limitations, or students in geographic areas without access to large ensembles, a VR simulator removes physical and logistical barriers. The system can also serve as a diagnostic tool: recording gesture trajectories, gaze patterns, and facial signals over time to give conductors data-driven feedback on their technique.</li>
+            <li>Real-time interaction and feedback loops — ConductVR's architecture — where every baton stroke triggers a beat clip, every gaze event evaluates a cue, and facial signals modulate volume in real time — mirrors the closed-loop feedback paradigm used in biofeedback therapy and adaptive learning systems. The same technical infrastructure could support future applications in expressive human-computer interaction research.</li>
           </ul>
         </div>
       </div>
@@ -120,21 +120,20 @@
         <div class="subsection">
           <h3 class="subtitle">Challenges</h3>
           <div class="prose">
-            <p>
-              Proin magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Performance, comfort, input mapping, and scene scale are common pain points in room-scale VR.
-            </p>
+
           </div>
         </div>
         <div class="subsection">
           <h3 class="subtitle">Proposed techniques</h3>
           <div class="prose">
             <p>
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Listing your approaches here — e.g. locomotion scheme, UI diegesis, optimization passes, shader choices, XR Interaction Toolkit usage — makes the report easy to scan.
+              Building a real-time conducting simulator on standalone VR hardware surfaces challenges across input fidelity, audio synchronization, spatial sensing, and scene performance. Several of these required multiple design iterations before arriving at workable solutions.
             </p>
             <ul>
-              <li>Technique one — short explanation.</li>
-              <li>Technique two — short explanation.</li>
-              <li>Technique three — short explanation.</li>
+              <li>Beat detection robustness — The first iteration of gesture detection tracked high baton velocity in a 4/4 conducting pattern (Down → In → Out → Up). This was brittle: small deviations from the expected order caused missed or doubled beats, and it was intrinsically tied to a single time signature. The system was redesigned to detect the velocity reversal at the bottom of any downstroke — a physical invariant that holds regardless of pattern — yielding consistent beat detection across time signatures and individual conducting styles.</li>
+              <li>Tempo-coupled audio playback — Audio System v1 sped up a continuous multi-track recording to match the detected BPM. This approach broke down at extreme tempos and introduced pitch artifacts. The redesign (v2) splits each instrument's track into individual beat-length clips. Each clip fires on stroke detection; BPM then controls only the tail length that fills inter-beat space. This decouples tempo from playback rate and gives the music a natural responsiveness to the conductor's gestures.</li>
+              <li>Eye tracking reference frames — Integrating OVR Eye Gaze data into Unity required reconciling multiple coordinate systems: the headset's CenterEyeAnchor, the gaze script's local rotation, and the world-space raycast needed to highlight orchestra sections. Mismatched reference frames produced gaze vectors that drifted or pointed in the wrong direction. The solution anchored eye objects to CenterEyeAnchor and applied the gaze script's rotation in that local frame before converting to world space for raycasting.</li>
+              <li> Spatial audio on standalone hardware - Steam Audio provided good HRTF-based spatialization in the editor but was not optimized for the Quest Pro's standalone compute budget. Migrating to the Meta XR Audio SDK maintained HRTF quality while reducing overhead. The concert hall's complex geometry was approximated as a single box room — a reasonable model for a single enclosed space — with material properties (wood walls, acoustic tile ceiling, carpet floor) tuned via script to match the reverb character of a real hall.</li>
             </ul>
           </div>
         </div>
